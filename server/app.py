@@ -4,6 +4,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app=app, resources={r"/api/*": {"origins": "*"}})
 
+app.config["JSON_AS_ASCII"] = False
+
 users = []
 posts = [{'title': "아무개", "content": "김재훈"}]
 
