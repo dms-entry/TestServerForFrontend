@@ -6,7 +6,7 @@ users = []
 posts = [{'title': "아무개", "content": "김재훈"}]
 
 
-@app.route('/signup', methods=['POST'])
+@app.route('/api/signup', methods=['POST'])
 def sign_up():
     data = request.json
     id = data['id']
@@ -28,7 +28,7 @@ def sign_up():
         abort(400)
 
 
-@app.route('/login', methods=['POST'])
+@app.route('/api/login', methods=['POST'])
 def login():
     if request.method == 'POST':
         data = request.json
@@ -42,7 +42,7 @@ def login():
         abort(401)
 
 
-@app.route('/post', methods=['GET', 'POST'])
+@app.route('/api/post', methods=['GET', 'POST'])
 def post():
     # 게시글 작성
 
