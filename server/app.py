@@ -1,6 +1,8 @@
 from flask import Flask, request, abort, jsonify, Response
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app=app, resources={r"/api/*": {"origins": "*"}})
 
 users = []
 posts = [{'title': "아무개", "content": "김재훈"}]
